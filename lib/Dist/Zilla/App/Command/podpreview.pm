@@ -1,6 +1,6 @@
 package Dist::Zilla::App::Command::podpreview;
 BEGIN {
-  $Dist::Zilla::App::Command::podpreview::VERSION = '0.001';
+  $Dist::Zilla::App::Command::podpreview::VERSION = '0.002';
 }
 
 # ABSTRACT: preview munged pod in browser
@@ -70,7 +70,7 @@ Dist::Zilla::App::Command::podpreview - preview munged pod in browser
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -82,9 +82,17 @@ A L<Dist::Zilla> command to preview the munged pod of a module in a browser usin
 
 =head1 SEE ALSO
 
-=for: list
-* L<Dist::Zilla>
-* L<App::PodPreview>
+=over 4
+
+=item *
+
+L<Dist::Zilla>
+
+=item *
+
+L<App::PodPreview>
+
+=back
 
 =head1 AUTHOR
 

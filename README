@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::App::Command::podpreview - preview munged pod in browser
 
 VERSION
-    version 0.001
+    version 0.002
 
 SYNOPSIS
         dzil podpreview My::Module
@@ -12,7 +12,9 @@ DESCRIPTION
     using App::PodPreview.
 
 SEE ALSO
-    =for: list * Dist::Zilla * App::PodPreview
+    *   Dist::Zilla
+
+    *   App::PodPreview
 
 AUTHOR
     Peter Shangov <pshangov@yahoo.com>

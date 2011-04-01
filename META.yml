@@ -26,4 +26,4 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-App-Command-podpreview
   homepage: http://github.com/pshangov/dist-zilla-app-command-podpreview/tree
   repository: git://github.com/pshangov/dist-zilla-app-command-podpreview.git
-version: 0.001
+version: 0.002
