@@ -1,6 +1,6 @@
 package Dist::Zilla::App::Command::podpreview;
-BEGIN {
-  $Dist::Zilla::App::Command::podpreview::VERSION = '0.002';
+{
+  $Dist::Zilla::App::Command::podpreview::VERSION = '0.003';
 }
 
 # ABSTRACT: preview munged pod in browser
@@ -47,19 +47,22 @@ sub execute
     my @filenames = "lib/$module.pm";
     push @filenames, "bin/$module", $module if !$colons;
 
-    my $object = first { $_->name ~~ @filenames } @{ $self->zilla->files };
+    my $object = first {
+        my $name = $_;
+        first { $name eq $_ } @filenames
+    } @{ $self->zilla->files };
     croak "Cannot find object " . $arg->[0] unless $object;
 
     my ($fh, $filename) = tempfile();
     print $fh $object->content or croak $!;
-    close $fh or corak $!;
+    close $fh or croak $!;
     podpreview($filename);
 }
 
 1;
 
-
 __END__
+
 =pod
 
 =for :stopwords Peter Shangov
@@ -70,7 +73,7 @@ Dist::Zilla::App::Command::podpreview - preview munged pod in browser
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -100,10 +103,9 @@ Peter Shangov <pshangov@yahoo.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Peter Shangov.
+This software is copyright (c) 2013 by Peter Shangov.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
