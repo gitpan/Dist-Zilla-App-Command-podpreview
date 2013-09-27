@@ -1,6 +1,6 @@
 package Dist::Zilla::App::Command::podpreview;
 {
-  $Dist::Zilla::App::Command::podpreview::VERSION = '0.003';
+  $Dist::Zilla::App::Command::podpreview::VERSION = '0.004';
 }
 
 # ABSTRACT: preview munged pod in browser
@@ -48,7 +48,7 @@ sub execute
     push @filenames, "bin/$module", $module if !$colons;
 
     my $object = first {
-        my $name = $_;
+        my $name = $_->name;
         first { $name eq $_ } @filenames
     } @{ $self->zilla->files };
     croak "Cannot find object " . $arg->[0] unless $object;
@@ -73,7 +73,7 @@ Dist::Zilla::App::Command::podpreview - preview munged pod in browser
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
